@@ -1,0 +1,6 @@
+/lib/FFT/examples/
+/lib/FFT/html/
+/lib/FFT/interface/
+
+*.mat
+*.dmr
