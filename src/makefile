@@ -14,10 +14,10 @@ _OBJ = main.o  # each file in src should have a corresponding .o file
 OBJ = $(patsubst %,$(ODIR)/%,$(_ODJ))
 
 $(ODIR)/%.o: %.c $(DEPS)
-  $(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
 FAIID: $(OBJ)
-  $(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 clean:
-  rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~
