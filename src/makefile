@@ -5,12 +5,12 @@ CFLAGS = -I$(IDIR)
 ODIR = obj
 LDIR = ../lib
 
-LIBS = -lm
+LIBS = -lm -lasound
 
-_DEPS = main.h # list all header files here
+_DEPS = main.h mic_utils.h # list all header files here
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = main.o  # each file in src should have a corresponding .o file
+_OBJ = main.o mic_utils.o # each file in src should have a corresponding .o file
 OBJ = $(patsubst %,$(ODIR)/%,$(_ODJ))
 
 $(ODIR)/%.o: %.c $(DEPS)

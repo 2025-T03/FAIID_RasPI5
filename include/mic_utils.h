@@ -1,9 +1,9 @@
 /*
-*  main.h
+*  mic_utils.h
 *  
-*  created: apr 19, 2026
+*  created: apr 20, 2026
 *  author: Eric Barber
-*  description: this is the header file for main.c
+*  description: this is the header file for mic_utils.c
 */
 
 /*----includes-----*/
@@ -11,11 +11,13 @@
 #define MAIN_H
 
 /* Include Files */
-#include "rtwtypes.h"
+#include "../lib/FFT/rtwtypes.h"
+#include "../lib/FFT/FFT_types.h"
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <alsa/asoundlib.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,7 +25,9 @@ extern "C" {
 
 
 /*-----Function Definitions-----*/
-int main(void);
+int init_i2s(snd_pcm_t *handle, char* PCM_DEVICE);
+
+void read_mic_array(emxArray_real_T *micArray, snd_pcm_t *handle);
 
 #ifdef __cplusplus
 }
@@ -35,4 +39,3 @@ int main(void);
  *
  * [EOF]
  */
-
